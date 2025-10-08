@@ -41,7 +41,16 @@ $(document).ready(function () {
         });
     });
 
+    $('#timeButton').on('click', function () {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0'); // Ensures two digits
+        const minutes = String(now.getMinutes()).padStart(2, '0'); // Ensures two digits
+        const currentTime = `${hours}:${minutes}`;
 
+        // Set the text of the div and open it as a dialog
+        $('#time').text(`The current time is ${currentTime}`);
+        $('#time').dialog();
+    });
 });
 
 function displayResults(data) {
