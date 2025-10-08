@@ -1,31 +1,180 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* --- Global Styles & Background --- */
 body {
-  margin-bottom: 60px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    /* A neutral, dark background to make the crimson and white pop */
+    background-color: #121212;
+    background-image: url('https://images.unsplash.com/photo-1642569803366-cd7e48284470?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff; /* White text for readability */
+    transition: background-image 0.5s ease-in-out;
+    /* Flexbox for centering content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* --- Main Container for Search Bar and Buttons --- */
+.search-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    /* Semi-transparent dark container */
+    background-color: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+/* --- Title Styling --- */
+#searchEngineName {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #9E1B32; /* UA Crimson */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    margin: 0 0 25px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    border: 2px solid #9E1B32;
+    padding: 10px 25px;
+    border-radius: 10px;
+    background-color: white;
 }
+
+    #searchEngineName:hover {
+        color: black;
+    }
+
+/* --- Text Input Box --- */
+#query {
+    width: 60%;
+    padding: 15px;
+    font-size: 1.1rem;
+    color: black;
+    background-color: white;
+    border: 2px solid #9E1B32; /* Crimson border */
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+}
+
+    #query:focus {
+        outline: none;
+        box-shadow: 0 0 10px #9E1B32;
+    }
+
+/* --- Button Group & Styling --- */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adds space between buttons */
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #9E1B32; /* UA Crimson */
+    border: 2px solid #9E1B32;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .btn:hover {
+        background-color: #8C1A2D; /* A slightly darker crimson */
+        border-color: white; /* White border on hover for a nice effect */
+        color: white;
+    }
+
+/* --- Search Results Container --- */
+.results-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    /* Changes for the new theme */
+    background-color: rgba(30, 30, 30, 0.9); /* Dark interior */
+    border: 2px solid #9E1B32; /* Crimson border */
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    display: none;
+}
+
+/* --- Individual Search Result Item --- */
+.search-result {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(158, 27, 50, 0.3); /* Faint crimson separator line */
+}
+
+    .search-result:last-child {
+        border-bottom: none;
+    }
+
+    .search-result h3 a {
+        color: white; /* White link for high contrast */
+        text-decoration: none;
+        font-size: 1.3rem;
+        transition: color 0.2s ease-in-out;
+    }
+
+        .search-result h3 a:hover {
+            text-decoration: underline;
+            color: #9E1B32; /* Crimson on hover */
+        }
+
+    .search-result .result-link {
+        color: #cccccc; /* Light gray for the URL */
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .search-result .result-snippet {
+        color: #f0f0f0; /* Off-white for the description */
+        margin-top: 10px;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+/* --- Initial Visibility & Dialog Styling --- */
+#searchResults, #time {
+    display: none;
+}
+
+.ui-dialog {
+    background-color: #1e1e1e !important; /* Dark gray background */
+    border: 2px solid #9E1B32 !important; /* Crimson border */
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    color: white !important; /* Ensures text inside is white */
+}
+    .ui-dialog .ui-dialog-content {
+        color: white !important;
+    }
+
+    .ui-dialog .ui-dialog-titlebar {
+        background-color: #9E1B32 !important; /* Crimson title bar */
+        color: #9E1B32 !important; /* White title text */
+        border-bottom: 2px solid #8C1A2D !important; /* Darker crimson border */
+        border-radius: 6px 6px 0 0; /* Match rounded corners */
+    }
+
+    /* Optional: Style the close button on hover */
+    .ui-dialog .ui-dialog-titlebar-close:hover {
+        background-color: #8C1A2D !important;
+        border-color: white !important;
+    }

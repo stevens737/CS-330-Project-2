@@ -2,19 +2,25 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>My Search Engine</title>
+    <title>Bama Browse</title>
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css" 
           integrity="sha384-s5lqL1NMu1TdDS/75EsR2IKqj5g2SbplE63nRqwT70/kcm2uFLqKGOCp1phJ2ENd" 
           crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-    <h1 id="searchEngineName">My Awesome Search</h1>
+    <h1 id="searchEngineName">Bama Browse</h1>
     <input type="text" id="query" />
-    <button id="searchButton">Search</button>
-    <button id="timeButton">Show Current Time</button>
-    <button id="luckyButton">I'm Feeling Lucky</button>
-    <div id="searchResults"></div>
+    <div class="button-group">
+        <button id="searchButton" class="btn">Search</button>
+        <button id="timeButton" class="btn">Show Current Time</button>
+        <button id="luckyButton" class="btn">I'm Feeling Lucky</button>
+    </div>
+    <div class="results-container">
+        <div id="searchResults"></div>
+    </div>
     <div id="time" title="Current Time"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
