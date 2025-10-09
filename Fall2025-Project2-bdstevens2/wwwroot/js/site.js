@@ -1,11 +1,4 @@
-﻿// Keys and ID
-const API_KEY = 'AIzaSyAzvdB0Z0pjYMM1p3G_wNZrYib1Y7pUxvw';
-const SEARCH_ENGINE_ID = '51a8a3509560d47aa';
-
-// Base API URL
-const API_BASE_URL = 'https://customsearch.googleapis.com/customsearch/v1';
-
-//Background images to swap through and index to track
+﻿//Background images to swap through and index to track
 const backgroundImages = [
     'https://images.unsplash.com/photo-1649687064416-63e29e986aea?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     'https://images.unsplash.com/photo-1649259441622-6d78703f4ea2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -48,7 +41,7 @@ $(document).ready(function () {
         const query = $('#query').val();
         if (!query) { return; }
 
-        const requestURL = `${API_BASE_URL}?key=${API_KEY}&cx=${SEARCH_ENGINE_ID}&q=${encodeURIComponent(query)}`;
+        const requestURL = `/api/search?query=${encodeURIComponent(query)}`;
 
         $.ajax({
             url: requestURL,
@@ -105,7 +98,7 @@ function performSearch() {
         return
     }
 
-    const requestURL = API_BASE_URL + "?key=" + API_KEY + "&cx=" + SEARCH_ENGINE_ID + "&q=" + encodeURIComponent(query);
+    const requestURL = `/api/search?query=${encodeURIComponent(query)}`;
 
     $.ajax({
         url: requestURL,

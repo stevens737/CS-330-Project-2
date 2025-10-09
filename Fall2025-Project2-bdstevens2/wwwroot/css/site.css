@@ -3,16 +3,14 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20px;
-    /* A neutral, dark background to make the crimson and white pop */
     background-color: #121212;
     background-image: url('https://images.unsplash.com/photo-1642569803366-cd7e48284470?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    color: #ffffff; /* White text for readability */
+    color: #ffffff; 
     transition: background-image 0.5s ease-in-out;
-    /* Flexbox for centering content */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +25,6 @@ body {
     padding: 40px;
     margin-bottom: 40px;
     text-align: center;
-    /* Semi-transparent dark container */
     background-color: rgba(30, 30, 30, 0.85);
     backdrop-filter: blur(8px);
     border-radius: 15px;
@@ -39,7 +36,7 @@ body {
 #searchEngineName {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #9E1B32; /* UA Crimson */
+    color: #9E1B32; 
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     margin: 0 0 25px 0;
     cursor: pointer;
@@ -61,7 +58,7 @@ body {
     font-size: 1.1rem;
     color: black;
     background-color: white;
-    border: 2px solid #9E1B32; /* Crimson border */
+    border: 2px solid #9E1B32; 
     border-radius: 8px;
     box-sizing: border-box;
     transition: box-shadow 0.3s ease;
@@ -78,7 +75,7 @@ body {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 10px; /* Adds space between buttons */
+    gap: 10px; 
     margin-bottom: 40px;
 }
 
@@ -87,7 +84,7 @@ body {
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background-color: #9E1B32; /* UA Crimson */
+    background-color: #9E1B32; 
     border: 2px solid #9E1B32;
     border-radius: 8px;
     cursor: pointer;
@@ -95,8 +92,8 @@ body {
 }
 
     .btn:hover {
-        background-color: #8C1A2D; /* A slightly darker crimson */
-        border-color: white; /* White border on hover for a nice effect */
+        background-color: #8C1A2D; 
+        border-color: white; 
         color: white;
     }
 
@@ -105,9 +102,8 @@ body {
     width: 100%;
     max-width: 800px;
     padding: 20px;
-    /* Changes for the new theme */
-    background-color: rgba(30, 30, 30, 0.9); /* Dark interior */
-    border: 2px solid #9E1B32; /* Crimson border */
+    background-color: rgba(30, 30, 30, 0.9); 
+    border: 2px solid #9E1B32;
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
     display: none;
@@ -116,7 +112,7 @@ body {
 /* --- Individual Search Result Item --- */
 .search-result {
     padding: 15px 0;
-    border-bottom: 1px solid rgba(158, 27, 50, 0.3); /* Faint crimson separator line */
+    border-bottom: 1px solid rgba(158, 27, 50, 0.3); 
 }
 
     .search-result:last-child {
@@ -124,7 +120,7 @@ body {
     }
 
     .search-result h3 a {
-        color: white; /* White link for high contrast */
+        color: white; 
         text-decoration: none;
         font-size: 1.3rem;
         transition: color 0.2s ease-in-out;
@@ -132,11 +128,11 @@ body {
 
         .search-result h3 a:hover {
             text-decoration: underline;
-            color: #9E1B32; /* Crimson on hover */
+            color: #9E1B32; 
         }
 
     .search-result .result-link {
-        color: #cccccc; /* Light gray for the URL */
+        color: #cccccc; 
         text-decoration: none;
         font-size: 0.9rem;
         display: block;
@@ -144,7 +140,7 @@ body {
     }
 
     .search-result .result-snippet {
-        color: #f0f0f0; /* Off-white for the description */
+        color: #f0f0f0; 
         margin-top: 10px;
         font-size: 1rem;
         line-height: 1.5;
@@ -156,24 +152,23 @@ body {
 }
 
 .ui-dialog {
-    background-color: #1e1e1e !important; /* Dark gray background */
-    border: 2px solid #9E1B32 !important; /* Crimson border */
+    background-color: #1e1e1e !important; 
+    border: 2px solid #9E1B32 !important; 
     border-radius: 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    color: white !important; /* Ensures text inside is white */
+    color: white !important; 
 }
     .ui-dialog .ui-dialog-content {
         color: white !important;
     }
 
     .ui-dialog .ui-dialog-titlebar {
-        background-color: #9E1B32 !important; /* Crimson title bar */
-        color: #9E1B32 !important; /* White title text */
-        border-bottom: 2px solid #8C1A2D !important; /* Darker crimson border */
-        border-radius: 6px 6px 0 0; /* Match rounded corners */
+        background-color: #9E1B32 !important; 
+        color: #9E1B32 !important; 
+        border-bottom: 2px solid #8C1A2D !important; 
+        border-radius: 6px 6px 0 0; 
     }
 
-    /* Optional: Style the close button on hover */
     .ui-dialog .ui-dialog-titlebar-close:hover {
         background-color: #8C1A2D !important;
         border-color: white !important;
